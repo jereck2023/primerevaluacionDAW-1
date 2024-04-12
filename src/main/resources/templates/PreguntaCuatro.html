@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>CL1 - Pregunta 4</title>
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+
+<div class="card">
+    <div class="card-header text-bg-primary">
+        PREGUNTA CUATRO
+    </div>
+    <div class="card-body">
+        <form th:action="@{/preguntacuatro}" method="post" th:object="${preguntaCuatroModel}">
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtnumero1"
+                       th:field="*{inicial}" readonly>
+                <label for="txtnumero1">Entre</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="txtnumero2"
+                       th:field="*{fin}" readonly>
+                <label for="txtnumero2">y</label>
+            </div>
+            <hr />
+            <button type="submit" class="btn btn-primary">CALCULAR</button>
+            <br />
+            <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+                <span th:text="${resultado} ?: ''"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
