@@ -13,13 +13,26 @@
     </div>
     <div class="card-body">
         <form th:action="@{/preguntauno}" method="post" th:object="${preguntaunoModel}">
+
+
             <div class="form-floating mb-3">
+
+                 <select class="form-control" id="cboindicador" th:field="*{indicador}">
+                    <option  th:value="C">C</option>
+                    <option th:value="A">A</option>
+                    <option th:value="T">T</option>
+                    <option th:value="M">M</option>
+                </select>
+                <label for="cboindicador">Ingrese el indicador.</label>
+            </div>
+                <!--
                 <input type="text" class="form-control" id="txtindicador"
                        placeholder="name@example.com" th:field="*{indicador}">
                 <label for="txtindicador">Ingrese el indicador.</label>
-            </div>
+                -->
+
             <div class="form-floating">
-                <input type="text" class="form-control" id="txttasa"
+                <input type="number" min="0" step=".1" class="form-control" id="txttasa"
                        placeholder="Password" th:field="*{tasa}">
                 <label for="txttasa">Ingrese la tasa.</label>
             </div>

@@ -15,12 +15,12 @@
     <div class="card-body">
         <form th:action="@{/preguntados}" method="post" th:object="${preguntaDosModel}">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="txtprimero"
+                <input type="number" class="form-control" id="txtprimero"
                        th:field="*{primero}">
                 <label for="txtprimero">Primer número.</label>
             </div>
             <div class="form-floating">
-                <input type="text" class="form-control" id="txtsegundo"
+                <input type="number" class="form-control" id="txtsegundo"
                        th:field="*{segundo}">
                 <label for="txtsegundo">Segundo número.</label>
             </div>

@@ -33,8 +33,7 @@ public class PreguntaTresController {
             case 9 -> "Septiembre";
             case 10 -> "Octubre";
             case 11 -> "Noviembre";
-            case 12 -> "Diciembre";
-            default -> "Ingrese un valor entre el 1 y el 12";
+            default -> "Diciembre";
         };
 
         model.addAttribute("mostrarMensaje", true);
