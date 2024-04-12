@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layout::head">
+    <meta charset="UTF-8">
+    <title>CL1 - Pregunta 3</title>
+</head>
+<body>
+<nav th:replace="layout::menu"></nav>
+
+
+<div class="card">
+    <div class="card-header text-bg-success">
+        PREGUNTA TRES
+    </div>
+    <div class="card-body">
+        <form th:action="@{/preguntatres}" method="post" th:object="${preguntaTresModel}">
+            <div class="form-floating mb-3">
+                <input type="number" min="1" max="12" class="form-control" id="txtnumero"
+                       th:field="*{mesnum}">
+                <label for="txtnumero">Número de Mes.</label>
+            </div>
+
+            <hr />
+            <button type="submit" class="btn btn-primary">CALCULAR</button>
+            <br />
+            <div th:if="${mostrarMensaje}" class="alert alert-danger" role="alert">
+                <span th:text="${resultado} ?: ''"></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
